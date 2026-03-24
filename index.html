@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Carla Elizabeth 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating petals canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-layer"></div>
+    <div class="hero-content">
+      <div class="ribbon-top">✦ 28 de Marzo ✦</div>
+      <h1 class="hero-title">
+        <span class="line-small">Feliz</span>
+        <span class="line-big">Cumpleaños</span>
+        <span class="line-name">Carla Elizabeth</span>
+      </h1>
+      <p class="hero-subtitle">24 años de luz, amor y momentos que guardamos en el corazón</p>
+      <div class="age-badge">
+        <span class="age-num">24</span>
+        <span class="age-text">años</span>
+      </div>
+      <div class="countdown-wrapper" id="countdown-wrapper">
+        <div class="countdown-label">Faltan para tu día especial</div>
+        <div class="countdown" id="countdown">
+          <div class="c-unit"><span id="c-days">00</span><small>días</small></div>
+          <div class="c-sep">:</div>
+          <div class="c-unit"><span id="c-hours">00</span><small>horas</small></div>
+          <div class="c-sep">:</div>
+          <div class="c-unit"><span id="c-mins">00</span><small>min</small></div>
+          <div class="c-sep">:</div>
+          <div class="c-unit"><span id="c-secs">00</span><small>seg</small></div>
+        </div>
+      </div>
+      <div class="birthday-msg" id="birthday-msg" style="display:none;">
+        <span>🎉 ¡HOY ES TU DÍA! 🎉</span>
+      </div>
+      <a href="#gallery" class="scroll-cta">Ver recuerdos ↓</a>
+    </div>
+    <div class="hero-decoration">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+      <div class="deco-circle c3"></div>
+    </div>
+  </section>
+
+  <!-- NAV TABS -->
+  <nav class="section-nav" id="section-nav">
+    <button class="nav-btn active" data-section="gallery">📸 Recuerdos</button>
+    <button class="nav-btn" data-section="upload">✨ Subir foto</button>
+    <button class="nav-btn" data-section="messages">💌 Mensajes</button>
+    <button class="nav-btn" data-section="write">✍️ Escribir</button>
+  </nav>
+
+  <!-- GALLERY SECTION -->
+  <section class="main-section" id="gallery">
+    <div class="section-header">
+      <h2>Muro de Recuerdos</h2>
+      <p>Todos los momentos que nos han hecho sonreír juntos</p>
+    </div>
+
+    <!-- Static original photos grid -->
+    <div class="gallery-grid" id="static-gallery">
+      <div class="photo-card tilt-left" style="--delay:0.1s">
+        <div class="photo-inner">
+          <img src="photo_4938308429093210993_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:0.2s">
+        <div class="photo-inner">
+          <img src="photo_4938308429093210996_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:0.3s">
+        <div class="photo-inner">
+          <img src="photo_4952191236567665704_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:0.4s">
+        <div class="photo-inner">
+          <img src="photo_4952191236567665712_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:0.5s">
+        <div class="photo-inner">
+          <img src="photo_4952191236567665716_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:0.6s">
+        <div class="photo-inner">
+          <img src="photo_4952191236567665726_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:0.7s">
+        <div class="photo-inner">
+          <img src="photo_4952191236567665730_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:0.8s">
+        <div class="photo-inner">
+          <img src="photo_4952191236567665772_w.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:0.9s">
+        <div class="photo-inner">
+          <img src="photo_4983791806340336732_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:1.0s">
+        <div class="photo-inner">
+          <img src="photo_4983791806340336747_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:1.1s">
+        <div class="photo-inner">
+          <img src="photo_4983791806340336748_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:1.2s">
+        <div class="photo-inner">
+          <img src="photo_4983791806340336753_w.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:1.3s">
+        <div class="photo-inner">
+          <img src="photo_4999256772392454972_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:1.4s">
+        <div class="photo-inner">
+          <img src="photo_5040020259754150926_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+      <div class="photo-card tilt-left" style="--delay:1.5s">
+        <div class="photo-inner">
+          <img src="photo_5040020259754150939_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tl"></div>
+      </div>
+      <div class="photo-card tilt-right" style="--delay:1.6s">
+        <div class="photo-inner">
+          <img src="photo_5179431870230367388_y.jpg" alt="Recuerdo" loading="lazy" />
+          <div class="photo-shine"></div>
+        </div>
+        <div class="photo-tape tape-tr"></div>
+      </div>
+    </div>
+
+    <!-- Supabase user photos -->
+    <div class="divider-fancy">
+      <span>✦ Fotos de invitados ✦</span>
+    </div>
+    <div class="gallery-grid" id="user-gallery">
+      <div class="loading-photos">
+        <div class="spinner"></div>
+        <p>Cargando fotos de amigos...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPLOAD SECTION -->
+  <section class="main-section hidden" id="upload">
+    <div class="section-header">
+      <h2>Comparte un Recuerdo</h2>
+      <p>¿Tienes una foto especial con Carla? ¡Súbela aquí!</p>
+    </div>
+    <div class="upload-card">
+      <div class="upload-zone" id="upload-zone">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <div class="upload-icon">📷</div>
+        <p class="upload-main">Arrastra tu foto aquí</p>
+        <p class="upload-sub">o haz clic para seleccionar</p>
+        <div class="preview-wrap" id="preview-wrap" style="display:none;">
+          <img id="preview-img" src="" alt="preview" />
+          <button class="remove-preview" id="remove-preview">✕</button>
+        </div>
+      </div>
+      <div class="upload-form">
+        <div class="form-group">
+          <label>Tu nombre</label>
+          <input type="text" id="uploader-name" placeholder="¿Quién eres?" maxlength="50" />
+        </div>
+        <div class="form-group">
+          <label>Un mensaje para esta foto (opcional)</label>
+          <textarea id="photo-caption" placeholder="Cuéntanos sobre este recuerdo..." rows="3" maxlength="200"></textarea>
+        </div>
+        <button class="btn-primary" id="upload-btn">
+          <span class="btn-text">✨ Subir foto</span>
+          <span class="btn-loader" style="display:none;">Subiendo...</span>
+        </button>
+        <div class="upload-feedback" id="upload-feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGES SECTION -->
+  <section class="main-section hidden" id="messages">
+    <div class="section-header">
+      <h2>Muro de Mensajes</h2>
+      <p>Palabras que vienen del corazón para Carla</p>
+    </div>
+    <div class="messages-wall" id="messages-wall">
+      <div class="loading-photos">
+        <div class="spinner"></div>
+        <p>Cargando mensajes...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITE SECTION -->
+  <section class="main-section hidden" id="write">
+    <div class="section-header">
+      <h2>Deja tu Mensaje</h2>
+      <p>Escríbele algo especial a Carla para su cumpleaños</p>
+    </div>
+    <div class="write-card">
+      <div class="letter-paper">
+        <div class="letter-lines"></div>
+        <div class="form-group">
+          <label>Tu nombre</label>
+          <input type="text" id="msg-name" placeholder="¿Quién escribe?" maxlength="50" />
+        </div>
+        <div class="form-group">
+          <label>Tu mensaje para Carla ✨</label>
+          <textarea id="msg-text" placeholder="Escríbele algo desde el corazón..." rows="6" maxlength="500"></textarea>
+          <div class="char-count"><span id="char-count">0</span>/500</div>
+        </div>
+        <div class="form-group emoji-row">
+          <label>¿Cómo describes esta amistad?</label>
+          <div class="emoji-picker" id="emoji-picker">
+            <button class="emoji-btn" data-emoji="❤️">❤️</button>
+            <button class="emoji-btn" data-emoji="🌸">🌸</button>
+            <button class="emoji-btn" data-emoji="🎂">🎂</button>
+            <button class="emoji-btn" data-emoji="✨">✨</button>
+            <button class="emoji-btn" data-emoji="🥂">🥂</button>
+            <button class="emoji-btn" data-emoji="🌙">🌙</button>
+            <button class="emoji-btn" data-emoji="🦋">🦋</button>
+            <button class="emoji-btn" data-emoji="🌺">🌺</button>
+          </div>
+        </div>
+        <button class="btn-primary" id="send-msg-btn">
+          <span class="btn-text">💌 Enviar mensaje</span>
+          <span class="btn-loader" style="display:none;">Enviando...</span>
+        </button>
+        <div class="upload-feedback" id="msg-feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lb-close" id="lb-close">✕</button>
+      <img id="lb-img" src="" alt="" />
+      <div class="lb-caption" id="lb-caption"></div>
+    </div>
+  </div>
+
+  <!-- CONFETTI BUTTON -->
+  <button class="confetti-fab" id="confetti-btn" title="¡Celebrar!">🎉</button>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Con amor para Carla Elizabeth en sus 24 años 🌸</p>
+    <p class="footer-date">28 de Marzo · Un día especial</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
